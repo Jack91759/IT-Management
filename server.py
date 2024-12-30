@@ -124,7 +124,8 @@ def get_devices():
         Device.memory_usage,
         Device.disk_usage,
         Device.timestamp,
-        Device.os
+        Device.os,
+        Device.anydesk
     ).join(
         subquery,
         (Device.name == subquery.c.name) & (Device.timestamp == subquery.c.max_timestamp)

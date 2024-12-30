@@ -57,7 +57,7 @@
                     <button class="btn btn-info btn-sm" onclick="sendAction('{{ device.name }}', 'restart')">Restart</button>
                     <button class="btn btn-danger btn-sm" onclick="sendAction('{{ device.name }}', 'shutdown')">Shutdown</button>
                     <button class="btn btn-secondary btn-sm" onclick="sendAction('{{ device.name }}', 'lock')">Lock</button>
-                    <a href="anydesk://1430342759" class="btn btn-success btn-sm" onclick="showPassword()">AnyDesk</a>
+                    <a href="anydesk://{{ device.anydesk }}" class="btn btn-success btn-sm" onclick="showPassword()">AnyDesk</a>
                 </td>
             </tr>
             {% endfor %}
@@ -78,9 +78,7 @@
         .then(data => alert(data.message))
         .catch(error => console.error('Error:', error));
     }
-    function showPassword() {
-        alert('The AnyDesk password is: SaranenServers');
-    }
+    
 </script>
 </body>
 </html>
